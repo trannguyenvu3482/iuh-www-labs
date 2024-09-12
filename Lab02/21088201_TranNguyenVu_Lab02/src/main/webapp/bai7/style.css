@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+    height: 100vh;
+    width: 800px;
+}
+
+form {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.input-control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.input-control input {
+    flex: 1;
+}
