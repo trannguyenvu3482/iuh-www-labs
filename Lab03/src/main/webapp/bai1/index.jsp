@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <div class="container p-2 bg-cyan-500">
+    <div class="p-2 bg-cyan-500 w-full">
         <form class="w-full h-full" action="${pageContext.request.contextPath}/bai1-servlet"
               method="get">
             <div class="flex w-full mb-4">
@@ -85,12 +85,12 @@
                     <label for="year"></label>
                     <select name="year" id="year">
                         <option value="" disabled selected>Year:</option>
-                        <option value="6">1999</option>
-                        <option value="7">2000</option>
-                        <option value="8">2001</option>
-                        <option value="9">2002</option>
-                        <option value="10">2003</option>
-                        <option value="10">2004</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
                     </select>
                 </div>
             </div>

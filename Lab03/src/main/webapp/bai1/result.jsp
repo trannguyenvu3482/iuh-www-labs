@@ -19,6 +19,11 @@
                 + "<br/> Gender: " + student.getGender()
                 + "<br/> Hobbies: " + Arrays.toString(student.getHobbies())
                 + "<br/> Birthday: " + student.getDay() + "/" + student.getMonth() + "/" + student.getYear()
+                + "<br/> Country: " + student.getCountry()
+                + "<br/> Address: " + student.getAddress()
+                + "<br/> Phone: " + student.getMobileNum()
+                + "<br/> PIN: " + student.getPinCode()
+                + "<br/> Course: " + student.getCourse()
         );
     %>
 </body>

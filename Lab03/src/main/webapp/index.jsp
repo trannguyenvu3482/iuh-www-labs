@@ -10,6 +10,7 @@
         </h1>
         <br/>
         <a href="${pageContext.request.contextPath}/bai1">Bài 1</a>
+        <a href="${pageContext.request.contextPath}/bai2">Bài 2</a>
     </div>
 </body>
 </html>
