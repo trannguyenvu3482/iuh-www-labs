@@ -23,8 +23,13 @@ import jakarta.servlet.http.HttpServletResponse;
 public class BookDetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(name = "jdbc/postgres")
-	private BookDAO bookDAO;
 	private DataSource dataSource;
+
+	private BookDAO bookDAO;
+
+	public BookDetailController() {
+		super();
+	}
 
 	@Override
 	public void init(ServletConfig conf) throws ServletException {
@@ -34,7 +39,8 @@ public class BookDetailController extends HttpServlet {
 		} catch (Exception e) {
 			throw new ServletException(e);
 		}
-		bookDAO = new BookDAOImpl(dataSource);
+
+		bookDAO = new BookDAOImpl(this.dataSource);
 	}
 
 	/**

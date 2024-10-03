@@ -84,6 +84,11 @@ public class CartController extends HttpServlet {
 			cart.deleteCartItem(index);
 			request.getSession().setAttribute("cart", cart);
 			request.getRequestDispatcher("cart.jsp").forward(request, response);
+		} else if (action.equals("checkout")) {
+			// Clear the cart
+			cart.getCartItems().clear();
+			cart.setOrderTotal(0);
+			request.getSession().setAttribute("cart", cart);
 		}
 	}
 

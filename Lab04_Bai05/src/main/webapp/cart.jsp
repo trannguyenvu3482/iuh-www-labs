@@ -90,6 +90,10 @@
 								</tr>
 							</tbody>
 						</table>
+					<div>
+						<a href="book-controller" class="btn btn-primary">Trở về</a>
+						<a href="checkout.jsp" class="btn btn-danger">Thanh toán</a>
+					</div>
 					</c:if>
 					<c:if test="${empty cart || cart.cartItems.size() == 0}">
 						<h3 class="text-center">Giỏ hàng của bạn trống</h3>
