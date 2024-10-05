@@ -1,23 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Danh sách sản phẩm</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
 </head>
 <body>
-	<div style="flex-direction: column;" class="container d-flex justify-between">
+	<div style="flex-direction: column;"
+		class="container d-flex justify-between">
 		<header class="text-center border border-2">
-			<a href="phone-list" class="btn btn-link">Danh sách sản phẩm</a>
-			| <a href="add-phone.jsp" class="btn btn-link">Thêm mới sản
-				phẩm</a> | <a href="manage-phone" class="btn btn-link">Chức năng
-				quản lý</a>
+
+			<a href="phone-list" class="btn btn-link">Danh sách sản phẩm</a> | <a
+				href="add-phone.jsp" class="btn btn-link">Thêm mới sản phẩm</a> | <a
+				href="manage-phone" class="btn btn-link">Chức năng quản lý</a>
 		</header>
 		<main class="flex-1">
 			<h2>Danh sách sản phẩm</h2>
+			<c:if test="${not empty message}">
+				<div class="alert alert-success" role="alert">${message}</div>
+			</c:if>
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>
@@ -25,6 +32,7 @@
 						<th>Tên sản phẩm</th>
 						<th>Năm sản xuất</th>
 						<th>Cấu hình</th>
+						<th>Chức năng</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -34,6 +42,9 @@
 							<td>${item.tenDienThoai}</td>
 							<td>${item.namSanXuat}</td>
 							<td>${item.cauHinh}</td>
+							<td><a
+								href="manage-phone?action=delete&id=${item.maDienThoai}"
+								class="btn btn-danger">Xóa</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

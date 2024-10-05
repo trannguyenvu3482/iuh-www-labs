@@ -2,13 +2,13 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
   <servlet>
     <description></description>
-    <display-name>PhoneLítServlet</display-name>
-    <servlet-name>PhoneLítServlet</servlet-name>
-    <servlet-class>com.fit.se.controllers.PhoneLítServlet</servlet-class>
+    <display-name>PhoneListServlet</display-name>
+    <servlet-name>PhoneListServlet</servlet-name>
+    <servlet-class>com.fit.se.controllers.PhoneListServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>PhoneLítServlet</servlet-name>
-    <url-pattern>/PhoneLítServlet</url-pattern>
+    <servlet-name>PhoneListServlet</servlet-name>
+    <url-pattern>/PhoneListServlet</url-pattern>
   </servlet-mapping>
   <display-name>Lab05_Bai08</display-name>
   <welcome-file-list>
@@ -19,4 +19,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AddPhoneServlet</display-name>
+    <servlet-name>AddPhoneServlet</servlet-name>
+    <servlet-class>com.fit.se.controllers.AddPhoneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddPhoneServlet</servlet-name>
+    <url-pattern>/AddPhoneServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagePhoneServlet</display-name>
+    <servlet-name>ManagePhoneServlet</servlet-name>
+    <servlet-class>com.fit.se.controllers.ManagePhoneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagePhoneServlet</servlet-name>
+    <url-pattern>/ManagePhoneServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

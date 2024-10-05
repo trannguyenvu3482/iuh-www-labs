@@ -5,7 +5,7 @@ import java.util.List;
 import com.fit.se.entity.DienThoai;
 
 public interface DienThoaiDAO {
-	public boolean insertDienThoai();
+	public boolean insertDienThoai(DienThoai dt);
 
 	public boolean deleteDienThoaiByID(int id);
 

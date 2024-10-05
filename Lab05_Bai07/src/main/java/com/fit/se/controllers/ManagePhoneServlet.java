@@ -15,17 +15,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PhoneLítServlet
+ * Servlet implementation class ManagePhoneServlet
  */
-@WebServlet("/phone-list")
-public class PhoneListServlet extends HttpServlet {
+
+@WebServlet("/manage-phone")
+public class ManagePhoneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private DienThoaiDAO dienThoaiDAO;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public PhoneListServlet() {
+	public ManagePhoneServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -42,9 +43,29 @@ public class PhoneListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String action = request.getParameter("action");
+
+		System.out.println("ManagePhoneServlet: action = " + action);
+
+		if (action != null && action.equals("delete")) {
+			int id = -1;
+			try {
+				id = Integer.parseInt(request.getParameter("id"));
+				if (dienThoaiDAO.deleteDienThoaiByID(id)) {
+					System.out.println("ManagePhoneServlet: Xóa thành công");
+					request.setAttribute("message", "Xóa thành công");
+				} else {
+					System.out.println("ManagePhoneServlet: Xóa thất bại");
+					request.setAttribute("message", "Xóa thất bại");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
 		List<DienThoai> listDienThoai = dienThoaiDAO.getAllDienThoai();
 		request.setAttribute("listDienThoai", listDienThoai);
-		request.getRequestDispatcher("phone-list.jsp").forward(request, response);
+		request.getRequestDispatcher("manage.jsp").forward(request, response);
 	}
 
 	/**

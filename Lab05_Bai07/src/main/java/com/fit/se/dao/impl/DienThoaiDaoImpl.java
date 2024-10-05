@@ -17,10 +17,9 @@ public class DienThoaiDaoImpl implements DienThoaiDAO {
 	}
 
 	@Override
-	public boolean insertDienThoai() {
+	public boolean insertDienThoai(DienThoai dt) {
 		try {
 			em.getTransaction().begin();
-			DienThoai dt = new DienThoai("Samsung Galaxy S21", 2021, "Snapdragon 888", null);
 			em.persist(dt);
 			em.getTransaction().commit();
 			return true;

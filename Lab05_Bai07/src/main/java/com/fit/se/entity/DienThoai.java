@@ -2,6 +2,8 @@ package com.fit.se.entity;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Range;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +11,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class DienThoai implements Serializable {
@@ -17,11 +21,17 @@ public class DienThoai implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "madt")
+	@NotNull(message = "Mã điện thoại không được để trống")
 	private int maDienThoai;
 
 	@Column(name = "tendt")
+	@NotEmpty(message = "Tên điện thoại không được để trống")
 	private String tenDienThoai;
+
+	@Range(min = 1000, max = 9999, message = "Năm sản xuất phải có 4 chữ số")
 	private int namSanXuat;
+
+	@NotEmpty(message = "Cấu hình không được để trống")
 	private String cauHinh;
 
 	@ManyToOne
