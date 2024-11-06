@@ -54,7 +54,12 @@ public class PhoneListServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
+
+		String search = request.getParameter("search");
+		List<DienThoai> listDienThoai = dienThoaiDAO.findDienThoaiByTenDT(search);
+		request.setAttribute("listDienThoai", listDienThoai);
+		request.getRequestDispatcher("phone-list.jsp").forward(request, response);
 	}
 
 }

@@ -13,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 public class DienThoai implements Serializable {
@@ -26,6 +27,7 @@ public class DienThoai implements Serializable {
 
 	@Column(name = "tendt")
 	@NotEmpty(message = "Tên điện thoại không được để trống")
+	@Pattern(regexp = "^[A-Za-z0-9 ]+$", message = "Tên điện thoại không hợp lệ")
 	private String tenDienThoai;
 
 	@Range(min = 1000, max = 9999, message = "Năm sản xuất phải có 4 chữ số")

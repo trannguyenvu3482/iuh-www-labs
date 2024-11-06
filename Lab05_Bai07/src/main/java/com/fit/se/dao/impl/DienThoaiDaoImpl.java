@@ -73,4 +73,21 @@ public class DienThoaiDaoImpl implements DienThoaiDAO {
 		}
 	}
 
+	@Override
+	public List<DienThoai> findDienThoaiByTenDT(String tenDT) {
+		try {
+			em.getTransaction().begin();
+			tenDT = tenDT.toLowerCase();
+			List<DienThoai> list = em
+					.createQuery("FROM DienThoai WHERE LOWER(tenDienThoai) like :tenDT", DienThoai.class)
+					.setParameter("tenDT", "%" + tenDT + "%").getResultList();
+			em.getTransaction().commit();
+			return list;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			e.printStackTrace();
+			return Collections.emptyList();
+		}
+	}
+
 }

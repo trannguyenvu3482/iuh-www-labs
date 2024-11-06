@@ -12,4 +12,6 @@ public interface DienThoaiDAO {
 	public DienThoai getDienThoaiByID(int id);
 
 	public List<DienThoai> getAllDienThoai();
+
+	public List<DienThoai> findDienThoaiByTenDT(String tenDT);
 }

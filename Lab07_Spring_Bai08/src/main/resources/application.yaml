@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    url: "jdbc:sqlserver://localhost:1433;databaseName=SpringBootTest;encrypt=false"
+    username: "sa"
+    password: "!Nguyenvu123"
+  application:
+    name: SpringBootTest3
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp

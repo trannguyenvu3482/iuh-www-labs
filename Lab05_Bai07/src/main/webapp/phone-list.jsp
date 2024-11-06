@@ -18,6 +18,12 @@
 		</header>
 		<main class="flex-1">
 			<h2>Danh sách sản phẩm</h2>
+			
+			<form action="phone-list" method="post">
+				<input type="text" name="search"></input>
+				<button type="submit" class="btn btn-primary">Tìm kiếm</button>
+			</form>
+			
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
 					<tr>

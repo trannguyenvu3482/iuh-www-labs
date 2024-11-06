@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd"> 
+ 
+	 <bean id="a" class="com.fit.se.entity.Address">
+	 	<constructor-arg value="HCM City" />
+	 	<constructor-arg value="HCM" />
+	 	<constructor-arg value="Vietnam" />
+	 </bean>
+ 
+	 <bean id="e" class="com.fit.se.entity.Employee">
+	 	<constructor-arg value="7" type="int"/>
+	 	<constructor-arg value="Nguyen Vu"/>
+	 	<constructor-arg>
+	 		<ref bean="a"/>
+	 	</constructor-arg>
+	 </bean>
+	 
+ </beans>
